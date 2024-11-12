@@ -6,46 +6,67 @@
 	padding: 1em;
 	font-family: 'Sour Gummy', sans-serif;
 	cursor: pointer;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card:hover {
+	transform: scale(1.05);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 .card__image {
 	position: relative;
-	aspect-ratio: 1/1; /*Pone la img cuaddrada,sirve para los videos*/
+	aspect-ratio: 1/1;
+	transition: transform 0.3s ease;
 }
-.card__image-img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center; /*Adaptar la imagen al container*/
-	border-radius: 0.5em;
+
+.card__image:hover {
+	transform: scale(1.1);
 }
+
 .card__status {
 	position: absolute;
 	top: 1.5em;
 	padding-left: 5em;
-
 	border-radius: 0 4px 4px 0;
 	left: 0;
 	background-color: #00000090;
 	color: #fff;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
-.card__body {
-	padding: 1em;
+
+.card__status:hover {
+	background-color: #c5196c;
+	color: #fff;
 }
+
 .card__name {
 	font-size: 1.5rem;
 	text-align: center;
 	border-bottom: 1px solid #ffffff30;
 	padding-bottom: 0.5em;
 	margin-bottom: 0.75em;
+	transition: color 0.3s ease;
+}
+
+.card__name:hover {
+	color: #000000;
 }
 
 .card__info {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5em;
+	transition: transform 0.3s ease;
 }
+
 .card__info-item {
 	font-weight: 600;
+}
+
+.card__info-item:hover {
+	transform: translateX(5px);
+	color: #c5196c;
 }
 .card__info-label {
 	font-size: 13px;
@@ -54,4 +75,9 @@
 	font-weight: 400;
 	font-family: 'Sour Gummy', sans-serif;
 	font-weight: bold;
+	transition: color 0.3s ease;
+}
+
+.card__info-label:hover {
+	color: #c5196c;
 }

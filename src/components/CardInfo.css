@@ -9,6 +9,12 @@
 	text-align: center;
 	box-shadow: 5px 5px 0 0px #00000090;
 	margin-bottom: 3em;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	transform-style: preserve-3d;
+}
+.cardInfo:hover {
+	transform: rotateY(10deg); /* Gira ligeramente */
+	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6); /* Sombra más prominente y colorida */
 }
 .cardInfo__title {
 	color: #c5196c;

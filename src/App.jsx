@@ -13,20 +13,7 @@ function App() {
 	const itemsPerPage = 5;
 
 	useEffect(() => {
-		const fetchData = async () => {
-			setLoading(true); // Activar loading
-			try {
-				await setLocation(
-					`https://rickandmortyapi.com/api/location/${locationId}`,
-				);
-			} catch (error) {
-				console.error('Error fetching data:', error);
-			} finally {
-				setLoading(false); // Desactivar loading cuando termine
-			}
-		};
-
-		fetchData();
+		setLocation(`https://rickandmortyapi.com/api/location/${locationId}`);
 	}, [locationId]);
 
 	const totalItems = location?.residents ? location.residents.length : 0;
@@ -45,40 +32,32 @@ function App() {
 
 	return (
 		<>
-			{loading && (
-				<div className="loading">
-					<div className="portal"></div>
-					<p>Loading...</p>
-				</div>
-			)}
-			<>
-				<div className="hero" />
-				<div className="container">
-					<Search setLocationId={setLocationId} />
-					<CardInfo location={location} />
-					<ResidentsList residents={currentPageItems} />
-				</div>
-				<br />
-				<div className="pagination">
-					<button
-						className="pagination__btn"
-						onClick={onPrev}
-						disabled={page === 1}
-					>
-						Anterior
-					</button>
-					<span className="pagination__pg">
-						Página {page} / {maxPage}
-					</span>
-					<button
-						className="pagination__btn"
-						onClick={onNext}
-						disabled={page === maxPage}
-					>
-						Siguiente
-					</button>
-				</div>
-			</>
+			<div className="hero" />
+			<div className="container">
+				<Search setLocationId={setLocationId} />
+				<CardInfo location={location} />
+				<ResidentsList residents={currentPageItems} />
+			</div>
+			<br />
+			<div className="pagination">
+				<button
+					className="pagination__btn"
+					onClick={onPrev}
+					disabled={page === 1}
+				>
+					Anterior
+				</button>
+				<span className="pagination__pg">
+					Página {page} / {maxPage}
+				</span>
+				<button
+					className="pagination__btn"
+					onClick={onNext}
+					disabled={page === maxPage}
+				>
+					Siguiente
+				</button>
+			</div>
 		</>
 	);
 }
