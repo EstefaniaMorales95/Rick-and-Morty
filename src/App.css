@@ -1,0 +1,38 @@
+.hero {
+	width: 100%;
+	height: 40vh;
+	background-image: url(https://cdn.wallpapersafari.com/66/87/WfvyU5G.webp);
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.container {
+	max-width: 1024;
+	margin: 0 auto;
+	padding: 0 0.75em 2em;
+}
+@media screen and (min-width: 1024px) {
+	.hero {
+		height: 50vh;
+	}
+}
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-top: 20px;
+}
+.pagination__btn {
+	background-color: #fff;
+	color: #c5196c;
+	border: none;
+	border-radius: 3px;
+	padding: 2px 4px;
+	cursor: pointer;
+	font-size: 16px;
+}
+.pagination__pg {
+	color: #fff;
+}
