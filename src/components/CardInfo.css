@@ -13,8 +13,8 @@
 	transform-style: preserve-3d;
 }
 .cardInfo:hover {
-	transform: rotateY(10deg); /* Gira ligeramente */
-	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6); /* Sombra más prominente y colorida */
+	transform: rotateY(10deg);
+	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6);
 }
 .cardInfo__title {
 	color: #c5196c;
